@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.row .col-lg-3 {
+  margin-bottom: 2%;
+}
+.card-body {
+  text-align: center;
+}
+.card img.card-img-top {
+  height: 150px;
+    width: auto;
+    margin: 0 auto;
+}
+.card-title {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list-group-item {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+.list-group-item .deleteItem {
+  background-color: #ff0037;
+  opacity: 1;
+  width: 0.75em;
+  height: 0.75em;
+  background-size: 0.75em;
+}
+
+.counterBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+}
+.counterBlock div{
+  display: flex;
+  align-items: center;
+}
+.button-cart {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background-color: #cfe2ff;
+  border: none;
+  font-size: 21px;
+  line-height: 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.cart-list-item__count {
+  padding: 0 5px;
+}
