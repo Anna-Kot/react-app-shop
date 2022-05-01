@@ -13,10 +13,6 @@ function CartItem({product, selectProduct}) {
         </div>
         <CloseButton className="deleteItem" onClick={() => selectProduct(product.id, false)}></CloseButton>
     </div>
-        {/* <button className="button-cart" onClick={() => addPhoneInCart(id)}>+</button>
-        <span className="cart-list-item__count">{count}</span>
-        <button className="button-cart" onClick={() => removePhoneFromCart(id)}>-</button> */}
-    {/* <CloseButton className="deleteItem" onClick={() => selectProduct(product.id, false)}></CloseButton> */}
     </ListGroup.Item>
 }
 
