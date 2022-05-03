@@ -1,15 +1,19 @@
-import React, {useState} from "react";
+import React from "react";
 import {ListGroup, CloseButton} from "react-bootstrap";
+import { increment, decrement } from '../store/dataShop';
+import { useSelector, useDispatch } from 'react-redux';
 
 function CartItem({product, selectProduct}) {
-    const [count, setCount] = useState(1);
+    const count = useSelector((state) => state.dataName.value);
+
+    const dispatch = useDispatch();
 
     return <ListGroup.Item><span>{product.brand} {product.model} ({product.price} грн)</span>
     <div className="counterBlock">
         <div>
-            <button className="button-cart" onClick={() => setCount(count + 1)}>+</button>
+            <button className="button-cart" onClick={() => dispatch(increment())}>+</button>
             <span className="cart-list-item__count" >{count}</span>
-            <button className="button-cart" onClick={() => count>1 ? setCount(count - 1) : count === 1}>-</button>
+            <button className="button-cart" onClick={() => dispatch(decrement())}>-</button>
         </div>
         <CloseButton className="deleteItem" onClick={() => selectProduct(product.id, false)}></CloseButton>
     </div>

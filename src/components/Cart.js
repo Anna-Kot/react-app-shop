@@ -1,20 +1,23 @@
 import React, {useEffect, useState} from "react";
 import {ListGroup} from "react-bootstrap";
 import CartItem from "./CartItem";
+import { useSelector} from 'react-redux';
 
-function Cart({products, selectProduct}) {
+function Cart({productsSelect, selectProduct}) {
     const [total, setTotal] = useState(0);
+    const count = useSelector((state) => state.dataName.value);
 
     useEffect(() => {
-        setTotal(products.reduce((acc, el) => acc + el.price, 0));
-    }, [products])
+        setTotal(productsSelect.reduce((acc, el) => acc + el.price*count, 0) );
+        console.log(count)
+    }, [productsSelect, count])
 
     return <>
-        {products.length ? <ListGroup className={'mb-3'}>
+        {productsSelect.length ? <ListGroup className={'mb-3'}>
             <ListGroup.Item as="li" variant="primary">
                 Кошик
             </ListGroup.Item>
-            {products.map(product => <CartItem key={product.id} product={product} selectProduct={selectProduct}/>)}
+            {productsSelect.map(product => <CartItem key={product.id} product={product} selectProduct={selectProduct}/>)}
             <h2>Total:</h2>
             <p><b className={'text-danger'}>{total} грн</b></p>
         </ListGroup> : ''}

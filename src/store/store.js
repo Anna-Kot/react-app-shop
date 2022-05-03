@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './counterSlice';
+// import counterReducer from './counterSlice';
+import dataBase from './dataShop';
 
 
 export default configureStore({
     reducer: {
-        counter: counterReducer,
+        dataName: dataBase,
     }
 })

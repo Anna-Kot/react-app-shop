@@ -1,0 +1,53 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+export const dataBase = createSlice({
+    name: 'dataName',
+    initialState: {
+        value: 1,
+        products: [{id: 1,  brand: 'SYOSS', description: 'Шампунь SYOSS Color с Цветком Камелии для окрашенных и тонированных волос 440 мл', model: 'Шампунь SYOSS Color',   price: 100.00, selected: false, imgSrc: 'https://content.rozetka.com.ua/goods/images/big_tile/258469002.jpg'},
+
+        {id: 2,  brand: 'Lee Stafford', description: ' Шампунь увлажняющий Lee Stafford с кокосовым маслом 250 мл', model: 'Шампунь увлажняющий Lee Staffor',price: 223.00, selected: false, imgSrc: 'https://content1.rozetka.com.ua/goods/images/big_tile/84440543.jpg'},
+
+        {id: 3,  brand: 'GLISS', description: 'Защитный шампунь GLISS Supreme Length для длинных волос, склонных к повреждениям и жирности 400 мл', model: 'Защитный шампунь GLISS',price: 99.00, selected: false, imgSrc: 'https://content2.rozetka.com.ua/goods/images/big_tile/166780265.jpg'},
+        
+        {id: 4,  brand: 'SYOSS', description: 'Мицеллярный шампунь Syoss Pure Volume для нормальных и тонких волос 440 мл', model: 'Мицеллярный шампунь Syoss',   price: 109.00, selected: false, imgSrc: 'https://content2.rozetka.com.ua/goods/images/big_tile/258469172.jpg'},
+
+        {id: 5,  brand: 'Numero', description: 'Шампунь восстанавливающий с овсом Brelil Numero 1000 мл', model: 'Шампунь восстанавливающий Numero',price: 375.00, selected: false, imgSrc: 'https://content1.rozetka.com.ua/goods/images/big_tile/259783110.jpg'},
+
+        {id: 6,  brand: 'Yellow', description: 'Шампунь для вьющихся волос Yellow Curls Low Shampoo 500 мл', model: 'Шампунь для вьющихся волос Yellow',price: 515.00, selected: false, imgSrc: 'https://content.rozetka.com.ua/goods/images/big_tile/261727997.jpg'},
+
+        {id: 7,  brand: 'Numero', description: 'Шампунь для блеска на основе ценных масел Brelil Numero 1000 мл', model: 'Шампунь для блеска Numero',   price: 395.00, selected: false, imgSrc: 'https://content1.rozetka.com.ua/goods/images/big_tile/259783042.jpg'},
+
+        {id: 8,  brand: 'Volume', description: 'Шампунь для увеличения объема CDC Volume Shampoo 250 мл', model: 'Шампунь для увеличения объема Volume',price: 460.00, selected: false, imgSrc: 'https://content1.rozetka.com.ua/goods/images/big_tile/263316961.jpg'},
+
+        {id: 9,  brand: 'SYOSS', description: 'Шампунь SYOSS SalonPlex с цветком сакуры для истощенных и поврежденных волос 440 мл', model: 'Шампунь SYOSS SalonPlex',price: 105.00, selected: false, imgSrc: 'https://content1.rozetka.com.ua/goods/images/big_tile/258469024.jpg'},
+
+        {id: 10,  brand: 'Unice', description: 'Безсульфатный шампунь Unice с прополисом и миндалем, 250 мл', model: 'Безсульфатный шампунь Unice',   price: 99.00, selected: false, imgSrc: 'https://content.rozetka.com.ua/goods/images/big_tile/254909797.jpg'},
+
+        {id: 11,  brand: 'SYOSS', description: 'Шампунь Syoss Repair с водорослями вакаме для сухих и поврежденных волос 440 мл', model: 'Шампунь Syoss Repair',price: 111.00, selected: false, imgSrc: 'https://content1.rozetka.com.ua/goods/images/big_tile/258468986.jpg'},
+
+        {id: 12,  brand: 'GLISS', description: 'Питательный шампунь GLISS Oil Nutritive для сухих и поврежденных волос 400 мл', model: 'Питательный шампунь GLISS',price: 105.00, selected: false, imgSrc: 'https://content.rozetka.com.ua/goods/images/big_tile/166779303.jpg'}]
+    },
+    reducers: {
+        increment: (state) => {
+            state.value += 1
+        },
+        decrement: (state) => {
+            if (state.value > 1) {
+                state.value -= 1
+            }
+            else {
+                state.value =1;
+            }
+        },
+        incrementByAmount: (state, action) => {
+            state.value += action.payload
+        },
+        setProductsState: (state, data) => {
+            state.products = data.payload;
+        }
+    }
+})
+export const {increment, decrement, setProductsState } = dataBase.actions
+
+export default dataBase.reducer

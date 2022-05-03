@@ -10,7 +10,7 @@ function Product({product, selectProduct}) {
                 <Card.Text>
                     Price: <b>{product.price} грн</b>
                 </Card.Text>
-                {product.selected ?
+                {product.selected === true ?
                     <Button variant="danger" onClick={() => selectProduct(product.id, false)}>Видалити з кошику</Button> :
                     <Button variant="success" onClick={() => selectProduct(product.id, true)}>Додати в кошик</Button>
                 }

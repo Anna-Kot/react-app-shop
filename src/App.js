@@ -18,11 +18,10 @@ function App() {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-
-            <Routes>
-                <Route path="/" element={<Shop />} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
+              <Routes>
+                  <Route path="/" element={<Shop />} />
+                  <Route path="*" element={<NotFound />} />
+              </Routes>
         </div>
     </>
 
